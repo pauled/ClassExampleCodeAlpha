@@ -11,6 +11,9 @@ public class LinkedListNode<T> {
     public T getValue(){
         return this.value;
     }
+    public void setNext(LinkedListNode node){
+        this.next=node;
+    }
     public LinkedListNode<T> getNext(){
         return this.next;
     }
