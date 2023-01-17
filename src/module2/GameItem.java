@@ -1,6 +1,6 @@
-package Module2;
+package module2;
 
-import Module3.Player;
+import module3.Player;
 
 public class GameItem {
     private double xLoc;

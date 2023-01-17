@@ -1,4 +1,4 @@
-package Module1;
+package module1;
 
 public class VariablesFunctions {
     public static double multiplyByTwo(double input){
@@ -14,8 +14,9 @@ public class VariablesFunctions {
         int num=4;
         double num2=2.4;
         String str1="A string";
-        Boolean bool=true;
-        System.out.println("I an a num: "+num);
+        int num3=6/4;
+        boolean bool=true;
+        System.out.println("I an a num3: "+num3);
 
         num2=multiplyByTwo(num2);
         System.out.println("new num2:"+num2);

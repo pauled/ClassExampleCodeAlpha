@@ -1,4 +1,4 @@
-package Module1;
+package module1;
 
 public class LinkedListNodeInt {
     private int value;
@@ -8,9 +8,20 @@ public class LinkedListNodeInt {
         this.value=val;
         this.next=next;
     }
+    public String toString(){
+        String out="";
+        out+=this.value;
+        if (this.next!=null) {
+            out+=this.next.toString()+" ";
+        }
+        return out;
+    }
 
     public static void main(String[] args) {
         LinkedListNodeInt first=new LinkedListNodeInt(1,null);
         first=new LinkedListNodeInt(2,first);
+        first=new LinkedListNodeInt(3,first);
+        String value=first.toString();
+        System.out.println(value);
     }
 }

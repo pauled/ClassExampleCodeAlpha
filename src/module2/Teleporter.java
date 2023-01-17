@@ -1,6 +1,6 @@
-package Module2;
+package module2;
 
-import Module1.Player;
+import module1.Player;
 
 public class Teleporter extends GameItem{
     private double dx;

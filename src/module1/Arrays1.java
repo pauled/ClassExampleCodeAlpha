@@ -1,4 +1,4 @@
-package Module1;
+package module1;
 
 public class Arrays1 {
     public static String toPrint(double[] arrIn){

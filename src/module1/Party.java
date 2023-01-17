@@ -1,4 +1,4 @@
-package Module1;
+package module1;
 
 public class Party {
     private Character[] members;

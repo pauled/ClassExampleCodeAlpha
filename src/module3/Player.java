@@ -1,4 +1,6 @@
-package Module1;
+package module3;
+
+import module2.GameItem;
 
 public class Player {
     private double xLoc;
@@ -6,13 +8,28 @@ public class Player {
     private int maxHP;
     private int HP;
     private int damageDealt;
+    private GameItem[] inventory;
+    private int invSize;
 
-    public Player(double xLoc,double yLoc,int maxHP){
+    public Player(double xLoc, double yLoc, int maxHP){
         this.xLoc=xLoc;
         this.yLoc=yLoc;
         this.maxHP=maxHP;
         this.HP=maxHP;
         this.damageDealt=4;
+        this.inventory=new GameItem[10];
+        this.invSize=0;
+    }
+    public void pickupItem(GameItem item){
+        if (invSize<inventory.length){
+            inventory[invSize]=item;
+            invSize++;
+        }
+    }
+    public void useItem(int loc){
+        if (loc<invSize){
+            inventory[loc].use(this);
+        }
     }
     public String toString(){
         String out="location x:"+this.xLoc+" y:";
