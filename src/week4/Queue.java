@@ -1,4 +1,6 @@
-package module1;
+package week4;
+
+import week4.LinkedListNode;
 
 public class Queue<A> {
     private LinkedListNode<A> front;

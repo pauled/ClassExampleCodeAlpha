@@ -1,4 +1,4 @@
-package module1;
+package week4;
 
 public class Stack<T> {
     private LinkedListNode<T> top;

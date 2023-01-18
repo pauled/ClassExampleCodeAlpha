@@ -16,21 +16,9 @@ public class PlusMinus {
         }
     }
 
-    //this is only part of the second testing day FIX ME
-    public static String pm(int score){
-        int ones=score%10;
-        if (ones>=7){
-            return "+";
-        } else if (ones>2){
-            return "";
-        } else {
-            return "-";
-        }
-    }
-
     public static void main(String[] args) {
-        System.out.println(98);
-        System.out.println(75);
-        System.out.println(30);
+        System.out.println(letter(98));
+        System.out.println(letter(75));
+        System.out.println(letter(30));
     }
 }

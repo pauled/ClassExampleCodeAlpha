@@ -1,4 +1,4 @@
-package module1;
+package week2;
 
 public class PlusMinus {
     public static String letter(int score){
@@ -27,8 +27,8 @@ public class PlusMinus {
     }
 
     public static void main(String[] args) {
-        System.out.println(98);
-        System.out.println(75);
-        System.out.println(30);
+        System.out.println(letter(98));
+        System.out.println(letter(75));
+        System.out.println(letter(30));
     }
 }
