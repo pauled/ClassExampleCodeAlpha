@@ -1,4 +1,4 @@
-package module1;
+package week3;
 
 public class Player {
 
@@ -18,6 +18,7 @@ public class Player {
     public int getHP() {
         return HP;
     }
+
     public String toString(){
         String out="health:"+this.HP+"/";
         out+=this.maxHP;

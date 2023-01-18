@@ -1,4 +1,4 @@
-package module1;
+package week2;
 
 public class FirstRecursion {
     public static int computeGeometricSum(int n){

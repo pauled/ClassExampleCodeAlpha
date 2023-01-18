@@ -1,6 +1,8 @@
-package module1;
+package week2;
 
 import org.junit.Test;
+import week2.FirstRecursion;
+
 import static org.junit.Assert.assertTrue;
 
 public class FirstRecursionTests {

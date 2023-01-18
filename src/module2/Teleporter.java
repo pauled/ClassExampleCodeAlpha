@@ -1,6 +1,6 @@
 package module2;
 
-import module1.Player;
+import week3.Player;
 
 public class Teleporter extends GameItem{
     private double dx;

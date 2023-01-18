@@ -1,8 +1,7 @@
 package week2;
 
 import org.junit.Test;
-
-import java.awt.*;
+import week1.PlusMinus;
 
 import static org.junit.Assert.assertTrue;
 

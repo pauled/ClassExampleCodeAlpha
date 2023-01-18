@@ -1,4 +1,4 @@
-package module1;
+package week3;
 
 public class Character {
     private int battlesWon;

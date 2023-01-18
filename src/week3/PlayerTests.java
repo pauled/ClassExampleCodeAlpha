@@ -1,6 +1,7 @@
-package module1;
+package week3;
 
 import org.junit.Test;
+import week3.Player;
 
 import static org.junit.Assert.assertTrue;
 

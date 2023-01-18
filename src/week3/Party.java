@@ -1,25 +1,22 @@
-package module1;
+package week3;
+
+import java.util.ArrayList;
 
 public class Party {
-    private Character[] members;
+    private ArrayList<Character> members;
     private int battlesWon;
-    private int numMembers;
 
     public Party(){
         this.battlesWon=0;
-        this.numMembers=0;
-        this.members=new Character[10];
+        this.members=new ArrayList<>();
     }
     public void addCharacter(Character member){
-        if (this.numMembers<this.members.length) {
-            this.members[this.numMembers] = member;
-            this.numMembers++;
-        }
+        this.members.add(member);
     }
     public void winBattle(int xp){
         this.battlesWon++;
-        for (int x=0;x<this.numMembers;x++){
-            this.members[x].winBattle(xp);
+        for (int x=0;x<this.members.size();x++){
+            this.members.get(x).winBattle(xp);
         }
     }
 

@@ -1,4 +1,4 @@
-package week2;
+package week1;
 
 public class PlusMinus {
     public static String letter(int score){
