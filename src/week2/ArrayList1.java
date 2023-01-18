@@ -17,6 +17,8 @@ public class ArrayList1 {
             arr1.add(x);
         }
         System.out.println(arr1);
+        ArrayList<Integer> arr2=arr1;
+        System.out.println(arr2);
         int total=sum(arr1);
         System.out.println("total: "+total);
     }
