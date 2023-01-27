@@ -41,12 +41,6 @@ public class Player extends GameItem {
         return out;
     }
 
-    public void useHealthPotion(HealthPotion healthPotion){
-
-    }
-
-
-
     public void takeDamage(int damage){
         this.HP-=damage;
     }
@@ -66,7 +60,6 @@ public class Player extends GameItem {
         HealthPotion largeHealthPotion = new HealthPotion(5.5, 0.0, 30);
         //break
         Weapon weapon = new Weapon(-5.0, 2.0, 15);
-
 
         player.pickUpItem(smallHealthPotion);
         player.pickUpItem(largeHealthPotion);
