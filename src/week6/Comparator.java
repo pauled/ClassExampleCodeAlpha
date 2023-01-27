@@ -1,9 +1,8 @@
 package week6;
 
 public class Comparator<T> {
-
-    boolean compare(T a, T b) {
+    //return true if a comes before b and false otherwise
+    public boolean compare(T a, T b) {
         return false;
     }
-
 }

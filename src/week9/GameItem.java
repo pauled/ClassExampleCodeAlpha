@@ -1,6 +1,6 @@
-package week6;
+package week9;
 
-public class GameItem {
+public abstract class GameItem {
     private double xLoc;
     private double yLoc;
 
@@ -17,5 +17,6 @@ public class GameItem {
     public String toString(){
         return "x: "+this.xLoc+" y:"+this.yLoc;
     }
-    public void use(Player player){}
+
+
 }

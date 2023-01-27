@@ -1,4 +1,4 @@
-package module1;
+package NotUsedCode;
 
 public class Conditional {
     public static String computeSize(double input){

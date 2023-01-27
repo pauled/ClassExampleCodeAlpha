@@ -1,4 +1,4 @@
-package module3;
+package week7;
 
 public class BinaryTreeNode<A> {
     public A value;
