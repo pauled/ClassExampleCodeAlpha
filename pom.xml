@@ -7,8 +7,8 @@
     <version>0.1</version>
 
     <properties>
-        <maven.compiler.source>1.18</maven.compiler.source>
-        <maven.compiler.target>1.18</maven.compiler.target>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
         <src.dir>src</src.dir>
     </properties>
 
