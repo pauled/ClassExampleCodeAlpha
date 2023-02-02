@@ -9,8 +9,11 @@
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <src.dir>src</src.dir>
     </properties>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+    </build>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
