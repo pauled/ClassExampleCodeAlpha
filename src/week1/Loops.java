@@ -2,7 +2,7 @@ package week1;
 
 public class Loops {
     public static void main(String[] args) {
-        double val = 10;
+        double val = 10.0;
         while (val>1) {
             System.out.println(val);
             val /= 2;
