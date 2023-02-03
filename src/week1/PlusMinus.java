@@ -8,7 +8,8 @@ public class PlusMinus {
         } else if(tens>=8){
             return "B";
         } else if(tens>=7){
-            return "C";
+            String result = "C";
+            return result;
         } else if(tens>=6){
             return "D";
         } else {
@@ -17,8 +18,11 @@ public class PlusMinus {
     }
 
     public static void main(String[] args) {
-        System.out.println(letter(98));
-        System.out.println(letter(75));
-        System.out.println(letter(30));
+        String result = letter(98);
+        System.out.println(result);
+        result = letter(75);
+        System.out.println(result);
+        result = letter(30);
+        System.out.println(result);
     }
 }
