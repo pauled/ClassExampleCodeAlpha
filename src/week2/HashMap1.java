@@ -4,21 +4,23 @@ import java.util.HashMap;
 
 public class HashMap1 {
     public static void main(String[] args) {
-        HashMap<String,Integer> bills=new HashMap<>();
+        HashMap<String, Integer> bills = new HashMap<>();
 
-        bills.put("Allen",17);
-        bills.put("Diggs",14);
-        System.out.println("what is Allen's number? "+bills.get("Allen"));
+        bills.put("Allen", 17);
+        bills.put("Diggs", 14);
+        System.out.print("What is Allen's number? ");
+        System.out.println(bills.get("Allen"));
         System.out.println(bills);
-        for (String keys : bills.keySet()){
-            System.out.println(keys);
+        for (String key : bills.keySet()) {
+            System.out.println(key);
         }
-        for (Integer values: bills.values()){
-            System.out.println(values);
+        for (Integer value : bills.values()) {
+            System.out.println(value);
         }
-        for (String keys : bills.keySet()){
-            int value=bills.get(keys);
-            System.out.println(keys+"'s number is: "+value);
+        for (String key : bills.keySet()) {
+            int value = bills.get(key);
+            System.out.print(key + "'s number is: ");
+            System.out.println(value);
         }
     }
 }
