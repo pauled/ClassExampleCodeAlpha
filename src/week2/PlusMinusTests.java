@@ -22,8 +22,8 @@ public class PlusMinusTests {
         pm = PlusMinus.plusMinus(78);
         assertTrue("78 It should be +, got: " + pm, pm.equals("+"));
         pm = PlusMinus.plusMinus(51);
-        assertTrue("51 It should be no -, got: " + pm, pm.equals("-"));
+        assertTrue("51 It should be -, got: " + pm, pm.equals("-"));
         pm = PlusMinus.plusMinus(100);
-        assertTrue("100 It should be no +, got: " + pm, pm.equals("+"));
+        assertTrue("100 It should be +, got: " + pm, pm.equals("+"));
     }
 }
