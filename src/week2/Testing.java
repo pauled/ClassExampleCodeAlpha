@@ -20,10 +20,18 @@ public class Testing {
     }
 
     @Test
-    public void testAdd() {
+    public void testStringsGoodExample() {
         String str1 = "ab";
         String str2 = "ab";
         assertTrue("strings equal?", str1.equals(str2));
+    }
+
+    @Test
+    public void testStringsBadExample() {
+        String str1 = "ab ".strip();
+        String str2 = "ab ".strip();
+        // Never use == to compare Strings
+        assertTrue("strings equal?", str1 == str2);
     }
 
 }

@@ -15,7 +15,7 @@ public class PlusMinus {
             return "F";
         }
     }
-    public static String pm(int score){
+    public static String plusMinus(int score){
         int ones=score%10;
         if (ones>=7){
             return "+";
@@ -27,8 +27,8 @@ public class PlusMinus {
     }
 
     public static void main(String[] args) {
-        System.out.println(letter(98));
-        System.out.println(letter(75));
-        System.out.println(letter(30));
+        System.out.println(letter(95));
+        System.out.println(letter(78));
+        System.out.println(letter(51));
     }
 }
