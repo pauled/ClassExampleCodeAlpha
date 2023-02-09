@@ -14,9 +14,16 @@ public class Testing {
     }
 
     @Test
-    public void testDoubles() {
+    public void testDoublesGood() {
         compareDoubles(1.0, 1.0);
         compareDoubles(0.3, 0.1 * 3.0);
+    }
+
+    @Test
+    public void testDoublesBad() {
+        // Never use == to compare doubles
+        System.out.println(0.1 * 3.0);
+        assertTrue(0.3 == 0.1 * 3.0);
     }
 
     @Test
