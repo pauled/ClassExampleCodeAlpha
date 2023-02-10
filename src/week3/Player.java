@@ -7,34 +7,38 @@ public class Player {
     private int damageDealt;
 
 
-    public Player(int maxHP){
-        this.maxHP=maxHP;
-        this.HP=maxHP;
-        this.damageDealt=4;
+    public Player(int maxHP) {
+        this.maxHP = maxHP;
+        this.HP = maxHP;
+        this.damageDealt = 4;
     }
+
     public int getMaxHP() {
         return maxHP;
     }
+
     public int getHP() {
         return HP;
     }
 
-    public String toString(){
-        String out="health:"+this.HP+"/";
-        out+=this.maxHP;
+    public String toString() {
+        String out = "health:" + this.HP + "/";
+        out += this.maxHP;
         return out;
     }
-    public void takeDamage(int damage){
-        this.HP-=damage;
+
+    public void takeDamage(int damage) {
+        this.HP -= damage;
     }
-    public void attack(Player otherPlayer){
+
+    public void attack(Player otherPlayer) {
         otherPlayer.takeDamage(this.damageDealt);
     }
 
     public static void main(String[] args) {
-        Player p1=new Player(3);
-        Player p2=new Player(6);
-        Player p3=p2;
+        Player p1 = new Player(3);
+        Player p2 = new Player(6);
+        Player p3 = p2;
         p1.attack(p2);
         p1.attack(p2);
         System.out.println(p2);
