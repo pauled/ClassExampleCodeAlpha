@@ -14,7 +14,7 @@ public class Player {
     }
 
     public int getMaxHP() {
-        return maxHP;
+        return this.maxHP;
     }
 
     public void setMaxHP(int maxHP) {
@@ -22,7 +22,7 @@ public class Player {
     }
 
     public int getHP() {
-        return hp;
+        return this.hp;
     }
 
     public void setHP(int hp) {
@@ -34,7 +34,7 @@ public class Player {
     }
 
     public int getAttackPower() {
-        return attackPower;
+        return this.attackPower;
     }
 
     public void setAttackPower(int attackPower) {
@@ -42,7 +42,7 @@ public class Player {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
