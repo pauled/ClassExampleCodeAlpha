@@ -4,13 +4,12 @@ public class Player {
 
     private int maxHP;
     private int hp;
-    private int attackPower;
+    private int attackPower = 4;
     private String name;
 
     public Player(String name, int maxHP) {
         this.setMaxHP(maxHP);
         this.setHP(maxHP);
-        this.setAttackPower(4);
         this.setName(name);
     }
 
@@ -51,7 +50,7 @@ public class Player {
     }
 
     public String toString() {
-        String out = "health:" + this.hp + "/";
+        String out = "health: " + this.hp + "/";
         out += this.maxHP;
         return out;
     }

@@ -1,12 +1,10 @@
 package week3;
 
 public class Character {
-    private int battlesWon;
-    private int expPoints;
+    private int battlesWon = 0;
+    private int expPoints = 0;
 
     public Character() {
-        this.battlesWon = 0;
-        this.expPoints = 0;
     }
 
     public void winBattle(int xp) {
