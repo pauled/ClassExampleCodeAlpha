@@ -1,15 +1,14 @@
 package week3;
 
 public class Character {
-    private int battlesWon;
-    private int expPts;
+    private int battlesWon = 0;
+    private int expPoints = 0;
 
-    public Character(){
-        this.battlesWon=0;
-        this.expPts=0;
+    public Character() {
     }
-    public void winBattle(int xp){
+
+    public void winBattle(int xp) {
         this.battlesWon++;
-        this.expPts+=xp;
+        this.expPoints += xp;
     }
 }

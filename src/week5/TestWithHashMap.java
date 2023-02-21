@@ -18,7 +18,7 @@ public class TestWithHashMap {
 
         for(int grade : testCases.keySet()){
             String expectedOutput = testCases.get(grade);
-            String computedOutput = PlusMinus.pm(grade);
+            String computedOutput = PlusMinus.plusMinus(grade);
             assertTrue(grade + " should return " + expectedOutput + " but got: " + computedOutput, expectedOutput.equals(computedOutput));
         }
 

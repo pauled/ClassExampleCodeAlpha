@@ -2,7 +2,7 @@ package week2;
 
 import java.util.ArrayList;
 
-public class ArrayList1 {
+public class ArrayListExample {
     public static int sum(ArrayList<Integer> arrIn) {
         int out = 0;
         for (int x=0; x<arrIn.size(); x++) {

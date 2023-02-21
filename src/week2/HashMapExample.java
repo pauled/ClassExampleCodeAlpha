@@ -2,7 +2,7 @@ package week2;
 
 import java.util.HashMap;
 
-public class HashMap1 {
+public class HashMapExample {
     public static void main(String[] args) {
         HashMap<String, Integer> bills = new HashMap<>();
 

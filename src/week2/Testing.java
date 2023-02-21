@@ -14,16 +14,31 @@ public class Testing {
     }
 
     @Test
-    public void testDoubles() {
+    public void testDoublesGood() {
         compareDoubles(1.0, 1.0);
         compareDoubles(0.3, 0.1 * 3.0);
     }
 
     @Test
-    public void testAdd() {
+    public void testDoublesBad() {
+        // Never use == to compare doubles
+        System.out.println(0.1 * 3.0);
+        assertTrue(0.3 == 0.1 * 3.0);
+    }
+
+    @Test
+    public void testStringsGoodExample() {
         String str1 = "ab";
         String str2 = "ab";
         assertTrue("strings equal?", str1.equals(str2));
+    }
+
+    @Test
+    public void testStringsBadExample() {
+        String str1 = "ab ".strip();
+        String str2 = "ab ".strip();
+        // Never use == to compare Strings
+        assertTrue("strings equal?", str1 == str2);
     }
 
 }
