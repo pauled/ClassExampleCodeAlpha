@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class TestCaseWithClasses {
 
@@ -23,6 +24,7 @@ public class TestCaseWithClasses {
             int expectedOutput = testCase.getExpectedOutput();
             int computedOutput = FirstRecursion.add(testCase.getInput1(), testCase.getInput2());
             assertTrue( testCase.getInput1() +" + " + testCase.getInput2()+ " = " +expectedOutput + " but add returned: " + computedOutput, expectedOutput == computedOutput);
+            assertEquals(testCase.getInput1() +" + " + testCase.getInput2()+ " = ",expectedOutput,computedOutput);
         }
 
     }

@@ -3,6 +3,7 @@ package week5;
 import org.junit.Test;
 import week4.LinkedListNode;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TestLinkedList {
@@ -27,7 +28,7 @@ public class TestLinkedList {
         if(!(l1 == null && l2 == null)){
             assertTrue("l1 was null, but l2 was not", l1 != null);
             assertTrue("l2 was null, but l1 was not", l2 != null);
-            assertTrue("node values are not equal", l1.getValue().equals(l2.getValue()));
+            assertEquals("node values are not equal",l1.getValue(),l2.getValue());
             compareLinkedLists(l1.getNext(), l2.getNext());
         }
     }

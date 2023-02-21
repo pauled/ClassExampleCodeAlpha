@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class TestArrayList {
 
     public void compareArrayLists(ArrayList<Integer> expected, ArrayList<Integer> computed){
-        assertTrue("The ArrayLists are not the same size", expected.size() == computed.size());
+        assertEquals(expected.size(),computed.size());
         for(int i=0; i<expected.size(); i++){
-            assertTrue("Values are different at index: " + i, expected.get(i).equals(computed.get(i)));
+            assertEquals("Values are different at index: " + i,expected.get(i),computed.get(i));
         }
     }
 
