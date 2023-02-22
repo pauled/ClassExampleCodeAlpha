@@ -21,7 +21,7 @@ public class LinkedListOfDoubles {
         }
     }
 
-    public double minHelper(LinkedListNode<Double> node, double min){
+    private double minHelper(LinkedListNode<Double> node, double min){
         if(node == null){
             return min;
         }else{
