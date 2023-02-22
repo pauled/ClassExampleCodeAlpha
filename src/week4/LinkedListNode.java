@@ -39,13 +39,13 @@ public class LinkedListNode<T> {
         return out;
     }
 
-    public LinkedListNode<T> getElement(T value) {
+    public LinkedListNode<T> find(T value) {
         if (this.value.equals(value)) {
             return this;
         } else if (this.next == null) {
             return null;
         } else {
-            return this.next.getElement(value);
+            return this.next.find(value);
         }
     }
 
