@@ -17,6 +17,10 @@ public class BST<A> {
         this.root = null;
     }
 
+    public BinaryTreeNode<A> getRoot() {
+        return this.root;
+    }
+
     public void insert(A value) {
         if (this.root == null) {
             this.root = new BinaryTreeNode<>(value, null, null);
