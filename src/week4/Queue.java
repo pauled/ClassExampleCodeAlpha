@@ -1,7 +1,5 @@
 package week4;
 
-import week4.LinkedListNode;
-
 public class Queue<A> {
     private LinkedListNode<A> front;
     private LinkedListNode<A> back;
