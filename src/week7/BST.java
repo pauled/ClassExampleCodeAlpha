@@ -17,6 +17,10 @@ public class BST<A> {
         this.root = null;
     }
 
+    public BinaryTreeNode<A> getRoot() {
+        return this.root;
+    }
+
     public void insert(A value) {
         if (this.root == null) {
             this.root = new BinaryTreeNode<>(value, null, null);
@@ -26,18 +30,18 @@ public class BST<A> {
     }
 
     private void insertHelper(BinaryTreeNode<A> node, A toInsert) {
-        if (this.comparator.compare(toInsert, node.value)) {
-            if (node.left == null) {
-                node.left = new BinaryTreeNode<>(toInsert, null, null);
+        if (this.comparator.compare(toInsert, node.getValue())) {
+            if (node.getLeft() == null) {
+                node.setLeft(new BinaryTreeNode<>(toInsert, null, null));
             } else {
-                insertHelper(node.left, toInsert);
+                insertHelper(node.getLeft(), toInsert);
             }
         } else {
             // ties go right
-            if (node.right == null) {
-                node.right = new BinaryTreeNode<>(toInsert, null, null);
+            if (node.getRight() == null) {
+                node.setRight(new BinaryTreeNode<>(toInsert, null, null));
             } else {
-                insertHelper(node.right, toInsert);
+                insertHelper(node.getRight(), toInsert);
             }
         }
     }
@@ -51,20 +55,20 @@ public class BST<A> {
     }
 
     private boolean findHelper(BinaryTreeNode<A> node, A toFind) {
-        if (node.value.equals(toFind)) {
+        if (node.getValue().equals(toFind)) {
             return true;
         } else {
-            if (this.comparator.compare(toFind, node.value)) {
-                if (node.left == null) {
+            if (this.comparator.compare(toFind, node.getValue())) {
+                if (node.getLeft() == null) {
                     return false;
                 } else {
-                    return findHelper(node.left, toFind);
+                    return findHelper(node.getLeft(), toFind);
                 }
             } else {
-                if (node.right == null) {
+                if (node.getRight() == null) {
                     return false;
                 } else {
-                    return findHelper(node.right, toFind);
+                    return findHelper(node.getRight(), toFind);
                 }
             }
 
