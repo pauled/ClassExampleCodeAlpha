@@ -20,7 +20,8 @@ public class TestLinkedList {
         if(n==1){
             return new LinkedListNode<>(1, list);
         }else{
-            return firstNSquaresHelper(n-1,new LinkedListNode<>(n*n, list));
+            LinkedListNode<Integer> temp=new LinkedListNode<>(n*n, list);
+            return firstNSquaresHelper(n-1,temp);
         }
     }
 

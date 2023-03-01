@@ -9,7 +9,7 @@ public class LinkedListOfDoubles {
         if(this.numbers == null){
             this.numbers = new LinkedListNode<>(d, null);
         }else {
-            this.numbers.append(d);
+            this.numbers = new LinkedListNode<>(d,this.numbers);
         }
     }
 
