@@ -3,8 +3,7 @@ package week5;
 import org.junit.Test;
 import week4.LinkedListNode;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestLinkedList {
 
@@ -33,6 +32,16 @@ public class TestLinkedList {
         }
     }
 
+    private void compareLinkedListsOfStringsIgnoreCase(LinkedListNode<String> expected, LinkedListNode<String> actual){
+        if(expected == null){
+            assertNull(actual);
+        }else{
+            assertNotNull(actual);
+            assertTrue(expected.getValue().equalsIgnoreCase(actual.getValue()));
+            compareLinkedListsOfStringsIgnoreCase(expected.getNext(), actual.getNext());
+        }
+    }
+
     @Test
     public void testLinkedLists() {
         LinkedListNode<Integer> expected = new LinkedListNode<>(9, null);
@@ -41,5 +50,33 @@ public class TestLinkedList {
 
         LinkedListNode<Integer> computed = firstNSquares(3);
         compareLinkedLists(expected, computed);
+    }
+
+    @Test
+    public void testLinkedListOfStringsIgnoringCase() {
+        LinkedListNode<String> actual = null;
+        // empty list
+        actual = new LinkedListNode<>("Red", null);
+        // "Red"
+        actual.append("GREEN");
+        // "Red" -> "GREEN"
+        actual.append("BLue");
+        // "Red" -> "GREEN" -> "BLue"
+        actual.append("cyan");
+        // "Red" -> "GREEN" -> "BLue" -> "cyan"
+
+        assertEquals(4, actual.size());
+        assertEquals("Red GREEN BLue cyan", actual.toString());
+
+        LinkedListNode<String> expected = new LinkedListNode<>("cyan", null);
+        // "cyan"
+        expected = new LinkedListNode<>("blue", expected);
+        // "blue" -> "cyan"
+        expected = new LinkedListNode<>("green", expected);
+        // "green" -> "blue" -> "cyan"
+        expected = new LinkedListNode<>("red", expected);
+        // "red" -> "green" -> "blue" -> "cyan"
+
+        compareLinkedListsOfStringsIgnoreCase(expected, actual);
     }
 }
