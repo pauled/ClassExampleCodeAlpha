@@ -12,8 +12,9 @@ public class HealthPotion extends GameItem {
         player.takeDamage(-this.increase);
     }
 
+    @Override
     public String toString() {
-        String out = "Health potion at " + super.toString();
+        String out = super.toString() + " - Health Potion";
         return out;
     }
 

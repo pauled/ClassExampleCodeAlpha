@@ -19,6 +19,10 @@ public class GameItem {
         return "x: " + this.xLoc + " y:" + this.yLoc;
     }
 
+    public void use() {
+        System.out.println("Item Used");
+    }
+
     public void use(Player player) {
     }
 }

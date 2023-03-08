@@ -1,5 +1,7 @@
 package week6;
 
+import java.util.Objects;
+
 public class Weapon extends GameItem {
     private int damage;
 
@@ -12,12 +14,13 @@ public class Weapon extends GameItem {
         System.out.println("Damage dealt: " + this.damage);
     }
 
+    @Override
     public void use(Player player) {
         player.setDamageDealt(this.damage);
     }
 
     public String toString() {
-        String out = "Weapon at " + super.toString();
+        String out = "Weapon Damage: " + this.damage;
         return out;
     }
 
