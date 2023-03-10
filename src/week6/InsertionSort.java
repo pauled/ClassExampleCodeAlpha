@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class InsertionSort<T> {
 
-    Comparator<T> comparator;
+    private Comparator<T> comparator;
 
     public InsertionSort(Comparator<T> comparator){
         this.comparator = comparator;
