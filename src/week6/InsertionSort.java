@@ -3,9 +3,15 @@ package week6;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class InsertionSort {
+public class InsertionSort<T> {
 
-    public static <T> ArrayList<T> insertionSort(ArrayList<T> input, Comparator<T> comparator) {
+    Comparator<T> comparator;
+
+    public InsertionSort(Comparator<T> comparator){
+        this.comparator = comparator;
+    }
+
+    public ArrayList<T> sort(ArrayList<T> input) {
 
         ArrayList<T> output = new ArrayList<>();
 
@@ -24,8 +30,9 @@ public class InsertionSort {
 
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(5, 6, 1));
-        ArrayList<Integer> output = insertionSort(list, new IntDecreasing());
+        InsertionSort<Integer> sorter = new InsertionSort<>(new IntDecreasing());
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 6, 5));
+        ArrayList<Integer> output = sorter.sort(list);
         System.out.println(output);
     }
 

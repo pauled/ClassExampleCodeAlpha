@@ -14,6 +14,14 @@ public class GameItem {
         this.yLoc += dy;
     }
 
+    public double getX() {
+        return xLoc;
+    }
+
+    public double getY() {
+        return yLoc;
+    }
+
     @Override
     public String toString() {
         return "x: " + this.xLoc + " y:" + this.yLoc;
