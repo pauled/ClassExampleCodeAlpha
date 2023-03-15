@@ -52,23 +52,20 @@ public class BST<A> {
     }
 
     private boolean findHelper(BinaryTreeNode<A> node, A toFind) {
-        if (node.getValue().equals(toFind)) {
-            return true;
-        } else {
-            if (this.comparator.compare(toFind, node.getValue())) {
-                if (node.getLeft() == null) {
-                    return false;
-                } else {
-                    return findHelper(node.getLeft(), toFind);
-                }
+        if (this.comparator.compare(toFind, node.getValue())) {
+            if (node.getLeft() == null) {
+                return false;
             } else {
-                if (node.getRight() == null) {
-                    return false;
-                } else {
-                    return findHelper(node.getRight(), toFind);
-                }
+                return findHelper(node.getLeft(), toFind);
             }
-
+        } else if (this.comparator.compare(node.getValue(), toFind)) {
+            if (node.getRight() == null) {
+                return false;
+            } else {
+                return findHelper(node.getRight(), toFind);
+            }
+        } else {
+            return true;
         }
     }
 
