@@ -40,6 +40,8 @@ public class Graph<N> {
         }
         return true;
     }
+    //cost of path
+    ////flight has to have cost
 
     public N mostIncomingConnections(){
         HashMap<N, Integer> incoming = new HashMap<>();
