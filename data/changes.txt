@@ -1,0 +1,5 @@
+The original worldcitiespop.csv file has been modified by
+1. Removing all cities without a recorded population
+2. Remove the AccentCity column
+3. Population values changed to Ints instead of Doubles
+4. Lat/Long values cleaned up by rounding truncation errors
