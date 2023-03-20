@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class Main {
+public class CountriesExample {
 
     public static ArrayList<String> readFile(String filename) {
         try {
@@ -43,10 +43,14 @@ public class Main {
     public static void main(String[] args) {
         HashMap<String, ArrayList<City>> countries = loadCountries();
         int threshold = 5;
+        HashMap<String, ArrayList<City>> smallCountries = new HashMap<>();
         for(String country : countries.keySet()){
-
+            ArrayList<City> cities = countries.get(country);
+            if(cities.size() <= threshold){
+                smallCountries.put(country, cities);
+            }
         }
-
+        System.out.println(smallCountries);
     }
 
 }
