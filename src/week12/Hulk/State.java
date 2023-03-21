@@ -1,4 +1,4 @@
-package week12;
+package week12.Hulk;
 
 public interface State {
     public void makeAngry();

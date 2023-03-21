@@ -1,4 +1,4 @@
-package week12;
+package week12.Hulk;
 
 public class ProfessorHulk implements State{
     BruceBanner banner;
