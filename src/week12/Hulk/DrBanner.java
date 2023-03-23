@@ -1,7 +1,7 @@
 package week12.Hulk;
 
 public class DrBanner implements State{
-    BruceBanner banner;
+    private BruceBanner banner;
     public DrBanner(BruceBanner banner){
         this.banner=banner;
     }
