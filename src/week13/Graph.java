@@ -6,18 +6,18 @@ import java.util.HashMap;
 
 public class Graph<N> {
 
-    private HashMap<N, ArrayList<Flight>> adjacencyList;
+    private HashMap<N, ArrayList<Edge<N>>> adjacencyList;
 
     public Graph() {
         this.adjacencyList = new HashMap<>();
     }
 
-    public void addEdge(Flight<N> flight) {
-        N from=flight.getStart();
-        N to=flight.getEnd();
+    public void addEdge(Edge<N> edge) {
+        N from=edge.getStart();
+        N to=edge.getEnd();
         this.addNode(from);
         this.addNode(to);
-        this.adjacencyList.get(from).add(flight);
+        this.adjacencyList.get(from).add(edge);
     }
 
     private void addNode(N a) {
@@ -27,7 +27,14 @@ public class Graph<N> {
     }
 
     public boolean areConnected(N from, N to){
-        return this.adjacencyList.containsKey(from) && this.adjacencyList.get(from).contains(to);
+        if(this.adjacencyList.containsKey(from)){
+            for (Edge edge : this.adjacencyList.get(from)){
+                if (edge.getEnd().equals(to)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean validPath(ArrayList<N> path) {
@@ -40,17 +47,32 @@ public class Graph<N> {
         }
         return true;
     }
-    //cost of path
-    ////flight has to have cost
+    public double costOfPath(ArrayList<N> path,Cost findCost) {
+        if (validPath(path)) {
+            double cost=0;
+            for (int i = 0; i < path.size() - 1; i++) {
+                N from = path.get(i);
+                N to = path.get(i + 1);
+                for (Edge edge : this.adjacencyList.get(from)){
+                    if (edge.getEnd().equals(to)){
+                        cost+=findCost.cost(edge);
+                    }
+                }
+            }
+            return cost;
+        } else {
+            return -1;
+        }
+    }
 
     public N mostIncomingConnections(){
         HashMap<N, Integer> incoming = new HashMap<>();
-        for(ArrayList<Flight> flights : this.adjacencyList.values()){
-            for(Flight<N> to: flights){
+        for(ArrayList<Edge<N>> flights : this.adjacencyList.values()){
+            for(Edge<N> to: flights){
                 if(!incoming.containsKey(to.getEnd())){
                     incoming.put(to.getEnd(), 1);
                 }else {
-                    incoming.put(to.getEnd(), incoming.get(to) +1 );
+                    incoming.put(to.getEnd(), incoming.get(to.getEnd()) +1 );
                 }
             }
         }
@@ -73,7 +95,7 @@ public class Graph<N> {
 
     public static void main(String[] args) {
         Graph<String> graph = new Graph<>();
-        ArrayList<Flight<String>> flights=new ArrayList<>();
+        ArrayList<Edge<String>> flights=new ArrayList<>();
         flights.add(new Flight<>("BUF", "WDC",199,350,3.5));
         flights.add(new Flight<>("TOR", "BUF",329,380,3.0));
         flights.add(new Flight<>("BUF", "TOR",495,220,2.5));
@@ -93,6 +115,14 @@ public class Graph<N> {
 
         ArrayList<String> path3 = new ArrayList<>(Arrays.asList("BUFFALO", "WDC", "JFK", "TOR"));
         System.out.println(graph.validPath(path3));
+
+        FlightDistance dist=new FlightDistance();
+        double distPath= graph.costOfPath(path,dist);
+        System.out.println(distPath);
+
+        FlightPrice price=new FlightPrice();
+        double cost=graph.costOfPath(path,price);
+        System.out.println(cost);
 
         System.out.println(graph.mostIncomingConnections());
     }
