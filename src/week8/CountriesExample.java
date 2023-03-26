@@ -17,9 +17,9 @@ public class CountriesExample {
         }
     }
 
-    public static HashMap<String, ArrayList<City>> loadCountries(){
+    public static HashMap<String, ArrayList<City>> loadCountries(String filename){
         HashMap<String, ArrayList<City>> countries = new HashMap<>();
-        ArrayList<String> lines = readFile("data/cities.csv");
+        ArrayList<String> lines = readFile(filename);
         lines.remove(0);
         for (String line : lines) {
             ArrayList<String> splits = new ArrayList<>(Arrays.asList(line.split(",")));
@@ -41,8 +41,8 @@ public class CountriesExample {
     }
 
     public static void main(String[] args) {
-        HashMap<String, ArrayList<City>> countries = loadCountries();
-        int threshold = 5;
+        HashMap<String, ArrayList<City>> countries = loadCountries("data/cities.csv");
+        int threshold = 3;
         HashMap<String, ArrayList<City>> smallCountries = new HashMap<>();
         for(String country : countries.keySet()){
             ArrayList<City> cities = countries.get(country);
@@ -50,7 +50,11 @@ public class CountriesExample {
                 smallCountries.put(country, cities);
             }
         }
-        System.out.println(smallCountries);
+        for(String country : smallCountries.keySet()){
+            for(City city : smallCountries.get(country)){
+                System.out.println(city);
+            }
+        }
     }
 
 }
