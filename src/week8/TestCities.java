@@ -64,5 +64,15 @@ public class TestCities {
     }
 
 
+    @Test
+    public void testCountryPopulation() {
+        String filename = "data/cities.csv";
+        String country = "vg";
+        int actual = CountriesExample.countryPopulation(filename, country);
+        int expected = 8888;
+        assertEquals(expected, actual);
+    }
+
+
 
 }

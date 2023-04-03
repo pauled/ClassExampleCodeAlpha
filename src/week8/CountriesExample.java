@@ -40,6 +40,21 @@ public class CountriesExample {
         return countries;
     }
 
+
+    // Write a method that returns the population of a country
+    public static int countryPopulation(String filename, String country){
+        HashMap<String, ArrayList<City>> countries = loadCountries(filename);
+        if(countries.containsKey(country)){
+            int population = 0;
+            for(City city : countries.get(country)){
+                population += city.getPopulation();
+            }
+            return population;
+        }else{
+            return 0;
+        }
+    }
+
     public static void main(String[] args) {
         HashMap<String, ArrayList<City>> countries = loadCountries("data/cities.csv");
         int threshold = 3;
