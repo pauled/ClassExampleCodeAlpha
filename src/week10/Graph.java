@@ -1,7 +1,5 @@
 package week10;
 
-import week4.LinkedListNode;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,10 +18,21 @@ public class Graph<N> {
         this.adjacencyList.get(from).add(to);
     }
 
+    public void addBidirectionalEdge(N node1, N node2) {
+        this.addNode(node1);
+        this.addNode(node2);
+        this.adjacencyList.get(node1).add(node2);
+        this.adjacencyList.get(node2).add(node1);
+    }
+
     private void addNode(N a) {
         if (!this.adjacencyList.containsKey(a)) {
             this.adjacencyList.put(a, new ArrayList<>());
         }
+    }
+
+    public HashMap<N, ArrayList<N>> getAdjacencyList() {
+        return adjacencyList;
     }
 
     public boolean areConnected(N from, N to){
@@ -67,6 +76,28 @@ public class Graph<N> {
     @Override
     public String toString() {
         return this.adjacencyList.toString();
+    }
+
+    public static void example(){
+        Graph<String> graph = new Graph<>();
+        graph.addBidirectionalEdge("UCLA","STANFORD");
+        graph.addBidirectionalEdge("UCLA","SRI");
+        graph.addBidirectionalEdge("UCLA","UCSB");
+        graph.addBidirectionalEdge("UCLA","RAND");
+        graph.addBidirectionalEdge("STANFORD","SRI");
+        graph.addBidirectionalEdge("SRI","UCSB");
+        graph.addBidirectionalEdge("UCSB","RAND");
+        graph.addBidirectionalEdge("SRI","UTAH");
+        graph.addBidirectionalEdge("RAND","SDC");
+        graph.addBidirectionalEdge("UTAH","SDC");
+        graph.addBidirectionalEdge("UTAH","MIT");
+        graph.addBidirectionalEdge("RAND","BBN");
+        graph.addBidirectionalEdge("MIT","BBN");
+        graph.addBidirectionalEdge("MIT","LINCOLN");
+        graph.addBidirectionalEdge("LINCOLN","CASE");
+        graph.addBidirectionalEdge("CASE","CARNEGIE");
+        graph.addBidirectionalEdge("CARNEGIE","HARVARD");
+        graph.addBidirectionalEdge("HARVARD","BBN");
     }
 
     public static void main(String[] args) {
