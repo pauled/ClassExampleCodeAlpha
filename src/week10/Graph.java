@@ -98,11 +98,27 @@ public class Graph<N> {
         graph.addBidirectionalEdge("CASE","CARNEGIE");
         graph.addBidirectionalEdge("CARNEGIE","HARVARD");
         graph.addBidirectionalEdge("HARVARD","BBN");
+        System.out.println();
+    }
+
+    public static void memExample(){
+        Graph<String> graph = new Graph<>();
+        graph.addEdge("BUF", "WDC");
+        graph.addEdge("WDC", "JFK");
+        graph.addEdge("TOR", "BUF");
+        ArrayList<String> path1 = new ArrayList<>(
+                Arrays.asList("BUF", "WDC", "JFK"));
+        System.out.println(graph.validPath(path1));
+        ArrayList<String> path2 = new ArrayList<>(
+                Arrays.asList( "JFK", "WDC", "BUF"));
+        System.out.println(graph.validPath(path2));
     }
 
     public static void main(String[] args) {
+        example();
+        memExample();
         Graph<String> graph = new Graph<>();
-        graph.addEdge("BUF", "WDC");//fix edges to make interesting
+        graph.addEdge("BUF", "WDC");
         graph.addEdge("TOR", "BUF");
         graph.addEdge("BUF", "TOR");
         graph.addEdge("JFK", "BUF");
