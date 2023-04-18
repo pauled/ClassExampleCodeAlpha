@@ -30,6 +30,7 @@ public class CountryPopulation {
         ArrayList<String> lines = readFile(filename);
         lines.remove(0); // remove the header
         for (String line : lines) {
+            //ae,abu dhabi,01,603687,24.466667,54.366667
             ArrayList<String> splits = new ArrayList<>(Arrays.asList(line.split(",")));
             String country = splits.get(0);
             String name = splits.get(1);
