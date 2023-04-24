@@ -5,7 +5,7 @@ public class Calm extends MentalState{
         super(brain);
     }
     public void study(){
-        System.out.println("remaining calm and not panicing");
+        System.out.println("remaining calm and not panicking");
     }
     public void getCloserToExam(){
         this.brain.setState(new Panic(this.brain));

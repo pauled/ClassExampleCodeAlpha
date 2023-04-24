@@ -1,10 +1,5 @@
 package week12.Hulk;
 
-import week12.Hulk.BruceBanner;
-import week12.Hulk.Car;
-import week12.Hulk.DrBanner;
-import week12.Hulk.State;
-
 public class TheHulk implements State {
     private BruceBanner banner;
     public TheHulk(BruceBanner banner){
