@@ -1,4 +1,4 @@
-package week12.Hulk;
+package week12.hulk;
 
 public class BruceBanner {
     private State state=new DrBanner(this);

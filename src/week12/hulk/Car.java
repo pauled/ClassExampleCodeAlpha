@@ -1,4 +1,4 @@
-package week12.Hulk;
+package week12.hulk;
 
 public class Car {
     public boolean totaled;

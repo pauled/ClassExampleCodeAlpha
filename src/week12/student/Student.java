@@ -1,6 +1,4 @@
-package week12.Student;
-
-import week12.Hulk.State;
+package week12.student;
 
 public class Student {
     private MentalState state;

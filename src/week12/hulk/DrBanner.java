@@ -1,21 +1,20 @@
-package week12.Hulk;
+package week12.hulk;
 
-public class ProfessorHulk implements State{
+public class DrBanner implements State{
     private BruceBanner banner;
-
-    public ProfessorHulk(BruceBanner banner){
+    public DrBanner(BruceBanner banner){
         this.banner=banner;
     }
     public void makeAngry(){
-        System.out.println("no problem");
+        banner.setState(new TheHulk(this.banner));
     }
     public void calmDown(){
         System.out.println("already calm");
     }
     public void useCar(Car car){
-        car.drive(true);
+        car.drive(false);
     }
     public void fight(){
-        System.out.println("smash carefully");
+        System.out.println("this won't end well");
     }
 }

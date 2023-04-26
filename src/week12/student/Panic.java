@@ -1,4 +1,4 @@
-package week12.Student;
+package week12.student;
 
 public class Panic extends MentalState{
     public Panic(Student brain){

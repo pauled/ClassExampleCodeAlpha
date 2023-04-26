@@ -1,4 +1,4 @@
-package week12.Student;
+package week12.student;
 
 public class Chillin extends MentalState{
     public Chillin(Student brain){

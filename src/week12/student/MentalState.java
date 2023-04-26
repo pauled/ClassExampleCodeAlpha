@@ -1,4 +1,4 @@
-package week12.Student;
+package week12.student;
 
 public abstract class MentalState {
     protected Student brain;
