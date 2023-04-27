@@ -8,9 +8,6 @@ public class On implements TVState{
 
     public On(TV tv){
         this.tv = tv;
-
-        Off off = new Off(this.tv);
-        System.out.println(off.tv);
     }
 
     @Override
@@ -23,10 +20,7 @@ public class On implements TVState{
 
     @Override
     public void volumeDownPressed() {
-        int minVolume = 0;
-        int proposedVolume = this.tv.getVolume() - 1;
-        int actualNewVolume = Math.max(proposedVolume, minVolume);
-        this.tv.setVolume(actualNewVolume);
+        this.tv.setVolume(Math.max(this.tv.getVolume() - 1, 0));
     }
 
     @Override
