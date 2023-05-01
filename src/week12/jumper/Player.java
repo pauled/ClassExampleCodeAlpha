@@ -25,7 +25,7 @@ public class Player {
         this.velocity = velocity;
     }
 
-    public void stateTransition(PlayerState newState) {
+    public void stateTransition(PlayerState newState){
         this.state = newState;
     }
 
@@ -35,6 +35,10 @@ public class Player {
 
     public double verticalVelocity() {
         return this.state.verticalVelocity();
+    }
+
+    public void update(double elapsedSeconds) {
+        this.state.update(elapsedSeconds);
     }
 
     public void leftDown() {
@@ -57,9 +61,6 @@ public class Player {
         this.state.jump();
     }
 
-    public void update(double deltaTime) {
-        this.state.update(deltaTime);
-    }
 
     /*
     Each player should
@@ -67,11 +68,12 @@ public class Player {
     -Walk left and right when keys are pressed
     -Stop walking when left or right are released
     -Jump when jump is pressed
-    --Jumping will set their vertical velocity to 5
+    --Jumping will set their vertical velocity to 5 units/second
     -While in the air, gravity of 10 units/second^2 will be applied linearly when updated
     --Height will be updated before applying gravity (to keep the math simple)
     -Jump higher if walking instead of standing still (10 instead of 5 velocity)
     -Stop falling when their height is 0
+    -When a player lands, they are standing (And assume left and right are not pressed)
 
     -Be able to double Jump one time while in the air
     --Double jump velocity is 5
