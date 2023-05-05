@@ -1,9 +1,6 @@
 package week13.jessesway3pm;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class WeightedGraph<T> {
 
@@ -21,7 +18,7 @@ public class WeightedGraph<T> {
         }
     }
 
-    private double costOfPath(ArrayList<T> path) {
+    public double costOfPath(List<T> path) {
         double totalCost = 0.0;
         for (int i = 0; i < path.size() - 1; i++) {
             T from = path.get(i);
@@ -38,46 +35,12 @@ public class WeightedGraph<T> {
         return totalCost;
     }
 
-    public static void main(String[] args) {
 
-        ArrayList<Flight> flights = new ArrayList<>();
-        flights.add(new Flight("BUF", "WDC", 199, 350, 3.5));
-        flights.add(new Flight("TOR", "BUF", 329, 380, 3.0));
-        flights.add(new Flight("BUF", "TOR", 495, 220, 2.5));
-        flights.add(new Flight("JFK", "BUF", 129, 450, 7.5));
-        flights.add(new Flight("WDC", "JFK", 147, 500, 3.2));
-        flights.add(new Flight("WDC", "BUF", 592, 370, 3.5));
-        flights.add(new Flight("JFK", "TOR", 400, 350, 1.5));
-
-
-        WeightedGraph<String> timeGraph = new WeightedGraph<>();
-        for (Flight flight : flights) {
-            timeGraph.addEdge(flight.getFrom(), flight.getTo(), flight.getTime());
+    public double totalCost(T node){
+        double total = 0.0;
+        for(double cost : this.adjacencyList.getOrDefault(node, new HashMap<>()).values()){
+            total += cost;
         }
-
-        WeightedGraph<String> distanceGraph = new WeightedGraph<>();
-        for (Flight flight : flights) {
-            distanceGraph.addEdge(flight.getFrom(), flight.getTo(), flight.getDistance());
-        }
-
-        WeightedGraph<String> priceGraph = new WeightedGraph<>();
-        for (Flight flight : flights) {
-            priceGraph.addEdge(flight.getFrom(), flight.getTo(), flight.getCost());
-        }
-
-
-        ArrayList<String> path = new ArrayList<>(Arrays.asList("BUF", "WDC", "JFK"));
-        ArrayList<String> path2 = new ArrayList<>(Arrays.asList("BUF", "WDC", "JFK", "TOR"));
-
-        double distPath = priceGraph.costOfPath(path);
-        System.out.println(distPath); // expect 199 + 147 = 346
-        double distPath2 = priceGraph.costOfPath(path2);
-        System.out.println(distPath2); // expect 346 + 400 = 746
-
-
-//        System.out.println(graph.mostIncomingConnections());
-
+        return total;
     }
-
-
 }
