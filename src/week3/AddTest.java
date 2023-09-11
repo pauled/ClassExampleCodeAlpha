@@ -2,6 +2,7 @@ package week3;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AddTest {
@@ -27,6 +28,18 @@ public class AddTest {
     @Test
     public void testAddFiveEdgeCase() {
         assertTrue(Adder.addFive(0) == 5);
+    }
+
+    @Test
+    public void testAddFiveEdgeCase_withAssertEquals() {
+        int result = Adder.addFive(0);
+        assertEquals(result, 5);
+    }
+
+    @Test
+    public void testAddFiveEdgeCase_withHintText() {
+        int result = Adder.addFive(0);
+        assertEquals("Expected 5 on input 0, got: " + result, result, 5);
     }
 
 }
