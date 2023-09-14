@@ -25,14 +25,14 @@ public class DoublesTests {
     public void testDoublesGood() {
         double y = Doubles.timesThree(0.1);
         System.out.println(y);
-        compareDoubles(y, 0.3);
+        compareDoubles(0.3, y);
     }
 
     @Test
     public void testDoublesBetter() {
         double y = Doubles.timesThree(0.1);
         System.out.println(y);
-        assertEquals(y, 0.3, 0.001);
+        assertEquals(0.3, y, 0.001);
     }
 
 

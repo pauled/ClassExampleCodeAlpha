@@ -26,7 +26,7 @@ public class StringsTests {
     public void testStringsBetterExample() {
         String a = "hello";
         String b = "goodbye";
-        assertEquals(Strings.combineStrings(a, b), "hello goodbye");
+        assertEquals("hello goodbye", Strings.combineStrings(a, b));
     }
 
 

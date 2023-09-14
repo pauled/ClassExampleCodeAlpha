@@ -39,7 +39,7 @@ public class AddTest {
     @Test
     public void testAddFiveEdgeCase_withHintText() {
         int result = Adder.addFive(0);
-        assertEquals("Expected 5 on input 0, got: " + result, 5, result);
+        assertEquals("Expected 5 on input 0, but got: " + result, 5, result);
     }
 
 }
