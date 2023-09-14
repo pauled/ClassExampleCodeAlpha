@@ -33,13 +33,13 @@ public class AddTest {
     @Test
     public void testAddFiveEdgeCase_withAssertEquals() {
         int result = Adder.addFive(0);
-        assertEquals(result, 5);
+        assertEquals(5, result);
     }
 
     @Test
     public void testAddFiveEdgeCase_withHintText() {
         int result = Adder.addFive(0);
-        assertEquals("Expected 5 on input 0, got: " + result, result, 5);
+        assertEquals("Expected 5 on input 0, got: " + result, 5, result);
     }
 
 }
