@@ -17,7 +17,7 @@ public class LinkedListOfDoubles {
         if(this.numbers == null){
             return -1.0;
         }else {
-            return minHelper(this.numbers, Integer.MAX_VALUE);
+            return minHelper(this.numbers, Double.POSITIVE_INFINITY);
         }
     }
 
