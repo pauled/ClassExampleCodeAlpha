@@ -2,7 +2,7 @@ package week9.lecturecoding;
 
 public class BankAccount {
 
-
+    private String accountHolder;
 
     public BankAccount(double initialInvestment){
 
