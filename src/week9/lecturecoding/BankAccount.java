@@ -3,29 +3,32 @@ package week9.lecturecoding;
 public class BankAccount {
 
     private String accountHolder;
+    private double money;
 
-    public BankAccount(double initialInvestment){
-
+    public BankAccount(String accountHolder, double initialInvestment){
+        this.accountHolder = accountHolder;
+        this.money = initialInvestment;
     }
 
     public double checkAccount(){
-        return 0.0;
+        return this.money;
     }
 
     public void deposit(double amount){
-
+        this.money += amount;
     }
 
     public void withdraw(double amount){
-
+        this.money -= amount;
     }
 
     public void transfer(BankAccount other, double amount){
-
+        this.withdraw(amount);
+        other.deposit(amount);
     }
 
     public boolean isOverdrawn(){
-        return false;
+        return this.money < 0.0;
     }
 
 
