@@ -10,6 +10,10 @@ public class BankAccount {
         this.money = initialInvestment;
     }
 
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
     public double checkAccount(){
         return this.money;
     }

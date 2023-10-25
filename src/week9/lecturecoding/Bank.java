@@ -1,12 +1,14 @@
 package week9.lecturecoding;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Bank {
 
+    private ArrayList<BankAccount> accounts = new ArrayList<>();
 
-    public void addAcount(BankAccount account){
-
+    public void addAccount(BankAccount account){
+        this.accounts.add(account);
     }
 
 
@@ -17,7 +19,13 @@ public class Bank {
      *         threshold dollars
      */
     public ArrayList<BankAccount> getLargeAccounts(double threshold){
-        return null;
+        ArrayList<BankAccount> largeAccounts = new ArrayList<>();
+        for(BankAccount account : this.accounts){
+            if(account.checkAccount() > threshold){
+                largeAccounts.add(0, account);
+            }
+        }
+        return largeAccounts;
     }
 
 }

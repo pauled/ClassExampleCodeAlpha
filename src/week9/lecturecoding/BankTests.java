@@ -4,12 +4,54 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
 
 public class BankTests {
+
+    private void checkArrayListsOfBankAccounts(ArrayList<BankAccount> expected, ArrayList<BankAccount> actual) {
+        assertNotNull(actual);
+        assertEquals(expected.size(), actual.size());
+
+        for (int i = 0; i < expected.size(); i++) {
+            BankAccount expectedAccount = expected.get(i);
+            boolean found = false;
+            for (int j = 0; j < expected.size(); j++) {
+                BankAccount actualAccount = actual.get(j);
+                if (expectedAccount.getAccountHolder().equals(actualAccount.getAccountHolder())) {
+                    if (Math.abs(expectedAccount.checkAccount() - actualAccount.checkAccount()) < 0.001) {
+                        found = true;
+                    }
+                }
+            }
+            assertTrue(found);
+        }
+    }
+
+    @Test
+    public void testBank() {
+        Bank bank = new Bank();
+
+        double threshold = 100.0;
+
+        bank.addAccount(new BankAccount("Tomato", 20.0));
+        bank.addAccount(new BankAccount("Shads", 100.01));
+        bank.addAccount(new BankAccount("Andrew", 480.50));
+        bank.addAccount(new BankAccount("Em", 99.99));
+        bank.addAccount(new BankAccount("Kingly", 120.0));
+
+        ArrayList<BankAccount> expected = new ArrayList<>(Arrays.asList(
+                new BankAccount("Shads", 100.01),
+                new BankAccount("Andrew", 480.50),
+                new BankAccount("Kingly", 120.0)
+        ));
+
+        ArrayList<BankAccount> actual = bank.getLargeAccounts(threshold);
+
+        this.checkArrayListsOfBankAccounts(expected, actual);
+    }
+
 
     @Test
     public void testBankAccount() {
@@ -42,9 +84,5 @@ public class BankTests {
         assertTrue(account.isOverdrawn());
     }
 
-    @Test
-    public void testBank(){
-
-    }
 
 }
