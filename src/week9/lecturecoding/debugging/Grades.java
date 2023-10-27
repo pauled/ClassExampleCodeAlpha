@@ -1,6 +1,6 @@
-package weekX.example3;
+package week9.lecturecoding.debugging;
 
-public class ComputingGrades {
+public class Grades {
 
     /**
      * Return the appropriate letter grades for the given score for this grading chart
