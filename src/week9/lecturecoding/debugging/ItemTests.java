@@ -48,8 +48,9 @@ public class ItemTests {
         double expected = 80.0;
         Item item = new Item("salmon", basePrice);
         item.addSale(salePercent);
-        item.getPrice();
         double actual = item.getPrice();
+        assertEquals(expected, actual, TOLERANCE);
+        actual = item.getPrice();
         assertEquals(expected, actual, TOLERANCE);
     }
 
@@ -58,7 +59,7 @@ public class ItemTests {
     public void testItemPriceWithMultipleSales1() {
         double basePrice = 6.5;
         ArrayList<Double> sales = new ArrayList<>(Arrays.asList(20.0, 15.5));
-        double expected = 4.394;
+        double expected = 4.39;
         Item item = new Item("cereal", basePrice);
         for (double sale : sales) {
             item.addSale(sale);
@@ -90,8 +91,9 @@ public class ItemTests {
         for (double sale : sales) {
             item.addSale(sale);
         }
-        item.getPrice();
         double actual = item.getPrice();
+        assertEquals(expected, actual, TOLERANCE);
+        actual = item.getPrice();
         assertEquals(expected, actual, TOLERANCE);
     }
 
@@ -100,7 +102,7 @@ public class ItemTests {
     public void testItemPriceWithMultipleSales3() {
         double basePrice = 19.95;
         ArrayList<Double> sales = new ArrayList<>(Arrays.asList(11.1, 5.5, 6.0, 15.0));
-        double expected = 13.391;
+        double expected = 13.39;
         Item item = new Item("shamwow", basePrice);
         for (double sale : sales) {
             item.addSale(sale);
@@ -124,7 +126,7 @@ public class ItemTests {
         double basePrice = 19.95;
         ArrayList<Double> sales = new ArrayList<>(Arrays.asList(11.1, 5.5, 6.0, 15.0));
         double taxRate = 0.0775;
-        double expected = 1.0378025;
+        double expected = 1.04; // 1.0378025;
         Item item = new Item("shamwow", basePrice);
         for (double sale : sales) {
             item.addSale(sale);
@@ -139,7 +141,7 @@ public class ItemTests {
         double taxRate = 0.1;
         String expected = "cereal: $5.50";
         Item item = new Item("cereal", basePrice);
-        String actual = item.recieptLine(taxRate);
+        String actual = item.receiptLine(taxRate);
         assertEquals(expected, actual);
     }
 
@@ -153,7 +155,7 @@ public class ItemTests {
         for (double sale : sales) {
             item.addSale(sale);
         }
-        String actual = item.recieptLine(taxRate);
+        String actual = item.receiptLine(taxRate);
         assertEquals(expected, actual);
     }
 

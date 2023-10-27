@@ -14,7 +14,7 @@ public class Item {
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public void setDescription(String description) {
@@ -54,7 +54,7 @@ public class Item {
      * Return a line to be printed on a receipt containing the description of the item and its price, including tax
      * (e.g. and Item with a description of "Eggs", a price of 3.0, and a tax rate of 0.05 should return "Eggs: $3.15"
      */
-    public String recieptLine(double taxRate) {
+    public String receiptLine(double taxRate) {
         return this.description + ": $" + this.price + this.computeTax(taxRate);
     }
 

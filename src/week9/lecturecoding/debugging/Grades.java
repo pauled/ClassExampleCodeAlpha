@@ -16,7 +16,7 @@ public class Grades {
      * 67-69  D+
      * 63-66  D
      * 60-62  D-
-     * 0-60   F
+     * 0-59   F
      * >100   Invalid Grade
      * <0     Invalid Grade
      */
