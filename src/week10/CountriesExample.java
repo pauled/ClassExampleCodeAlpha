@@ -17,6 +17,13 @@ public class CountriesExample {
         }
     }
 
+    /**
+     * Reads a CSV file with a header where each line is in the format
+     * "country,city_name,region,population,latitude,longitude"
+     *
+     * @param filename The name of the file to be read
+     * @return a HashMap mapping countries to all the cities in that country
+     */
     public static HashMap<String, ArrayList<City>> loadCountries(String filename){
         HashMap<String, ArrayList<City>> countries = new HashMap<>();
         ArrayList<String> lines = readFile(filename);
