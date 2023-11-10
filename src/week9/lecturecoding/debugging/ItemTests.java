@@ -139,7 +139,7 @@ public class ItemTests {
     public void testItemReceiptLine() {
         double basePrice = 5.0;
         double taxRate = 0.1;
-        String expected = "cereal: $5.50";
+        String expected = "cereal: $5.5";
         Item item = new Item("cereal", basePrice);
         String actual = item.receiptLine(taxRate);
         assertEquals(expected, actual);

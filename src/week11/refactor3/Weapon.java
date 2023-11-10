@@ -1,4 +1,4 @@
-package week11.lecture3;
+package week11.refactor3;
 
 public class Weapon extends GameItem {
     private int damage;

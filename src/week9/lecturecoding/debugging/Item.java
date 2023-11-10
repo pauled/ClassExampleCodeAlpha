@@ -25,10 +25,11 @@ public class Item {
      * Returns the price of the item after all sales are applied rounded to 2 decimal places
      */
     public double getPrice() {
+        double price = this.price;
         for (double sale : this.sales) {
-            this.price *= (100.0 - sale) / 100.0;
+            price *= (100.0 - sale) / 100.0;
         }
-        return this.roundToTwoDecimalPlaces(this.price);
+        return this.roundToTwoDecimalPlaces(price);
     }
 
     public void setPrice(double price) {
@@ -55,7 +56,7 @@ public class Item {
      * (e.g. and Item with a description of "Eggs", a price of 3.0, and a tax rate of 0.05 should return "Eggs: $3.15"
      */
     public String receiptLine(double taxRate) {
-        return this.description + ": $" + this.price + this.computeTax(taxRate);
+        return this.description + ": $" + (this.getPrice() + this.computeTax(taxRate));
     }
 
     private double roundToTwoDecimalPlaces(double input) {

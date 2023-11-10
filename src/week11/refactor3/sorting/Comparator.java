@@ -1,4 +1,4 @@
-package week11.lecture3.sorting;
+package week11.refactor3.sorting;
 
 public interface Comparator<T> {
     //return true if a comes before b and false otherwise
