@@ -1,6 +1,6 @@
 package week11.lecture1;
 
-public class Player extends GameItem {
+public class Player {
 
     private int maxHP;
     private int HP;
@@ -8,7 +8,6 @@ public class Player extends GameItem {
 
 
     public Player(int maxHP) {
-        super(0, 0);
         this.maxHP = maxHP;
         this.HP = maxHP;
         this.damageDealt = 4;

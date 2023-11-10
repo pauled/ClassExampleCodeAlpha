@@ -1,6 +1,6 @@
 package week11.lecture1;
 
-public class HealthPotion extends GameItem {
+public abstract class HealthPotion extends GameItem {
     private int increase;
 
     public HealthPotion(double xLoc, double yLoc, int increase) {
@@ -8,7 +8,8 @@ public class HealthPotion extends GameItem {
         this.increase = increase;
     }
 
-    public void use(Player player) {
+    @Override
+    public final void use(Player player) {
         player.takeDamage(-this.increase);
     }
 
@@ -23,8 +24,8 @@ public class HealthPotion extends GameItem {
     }
 
     public static void main(String[] args) {
-        HealthPotion h = new HealthPotion(2, 3, 10);
-        h.move(2, 4);
-        System.out.println(h);
+//        HealthPotion h = new HealthPotion(2, 3, 10);
+//        h.move(2, 4);
+//        System.out.println(h);
     }
 }
