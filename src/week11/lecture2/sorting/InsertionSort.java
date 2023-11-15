@@ -1,14 +1,12 @@
 package week11.lecture2.sorting;
 
-import week11.lecture1.sorting.Comparator;
-import week11.lecture1.sorting.IntDecreasing;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class InsertionSort<T> {
 
-    private week11.lecture1.sorting.Comparator<T> comparator;
+    private Comparator<T> comparator;
 
     public InsertionSort(Comparator<T> comparator){
         this.comparator = comparator;

@@ -1,7 +1,5 @@
 package week11.lecture2;
 
-import week11.lecture1.GameItem;
-import week11.lecture1.Player;
 
 public class Weapon extends GameItem {
     private int damage;
@@ -16,7 +14,7 @@ public class Weapon extends GameItem {
     }
 
     @Override
-    public void use(week11.lecture1.Player player) {
+    public void use(Player player) {
         player.setDamageDealt(this.damage);
     }
 
@@ -26,10 +24,5 @@ public class Weapon extends GameItem {
     }
 
     public static void main(String[] args) {
-        week11.lecture1.Player p1 = new Player(10);
-        Weapon w = new Weapon(1, 2, 20);
-        w.use(p1);
-        System.out.println(p1);
-        System.out.println(w);
     }
 }

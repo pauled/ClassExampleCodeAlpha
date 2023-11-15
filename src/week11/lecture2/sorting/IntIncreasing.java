@@ -1,6 +1,5 @@
 package week11.lecture2.sorting;
 
-import week11.lecture1.sorting.Comparator;
 
 public class IntIncreasing extends Comparator<Integer> {
 

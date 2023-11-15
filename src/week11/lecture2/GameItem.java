@@ -1,8 +1,8 @@
 package week11.lecture2;
 
-import week11.lecture1.Player;
 
-public class GameItem {
+public abstract class GameItem implements Usable {
+
     private double xLoc;
     private double yLoc;
 
@@ -29,10 +29,6 @@ public class GameItem {
         return "x: " + this.xLoc + " y:" + this.yLoc;
     }
 
-    public void use() {
-        System.out.println("Item Used");
-    }
+    public abstract void use();
 
-    public void use(Player player) {
-    }
 }

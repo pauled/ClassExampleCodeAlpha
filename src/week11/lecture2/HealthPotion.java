@@ -1,7 +1,5 @@
 package week11.lecture2;
 
-import week11.lecture1.GameItem;
-import week11.lecture1.Player;
 
 public class HealthPotion extends GameItem {
     private int increase;
@@ -23,6 +21,11 @@ public class HealthPotion extends GameItem {
     public String toString() {
         String out = super.toString() + " - Health Potion [" + this.increase + "]";
         return out;
+    }
+
+    @Override
+    public void use() {
+
     }
 
     public static void main(String[] args) {
