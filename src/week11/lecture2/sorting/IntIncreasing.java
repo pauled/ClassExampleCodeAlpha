@@ -1,7 +1,7 @@
 package week11.lecture2.sorting;
 
 
-public class IntIncreasing extends Comparator<Integer> {
+public class IntIncreasing implements Comparator<Integer> {
 
     @Override
     public boolean compare(Integer a, Integer b) {
