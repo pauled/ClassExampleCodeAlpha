@@ -49,7 +49,7 @@ public class Grades {
 
     public static String plusMinus(int score) {
         String modifier = "";
-        if (score < 100 && score >= 0) {
+        if (score <= 100 && score >= 0) {
             int ones = score % 10;
             if (ones >= 7) {
                 modifier = "+";
