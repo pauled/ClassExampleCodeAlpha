@@ -1,4 +1,4 @@
-package week9;
+package week6;
 
 
 public class TestCase{

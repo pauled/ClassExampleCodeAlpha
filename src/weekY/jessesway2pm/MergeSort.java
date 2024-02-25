@@ -1,6 +1,6 @@
 package weekY.jessesway2pm;
 
-import week6.Comparator;
+import week7.Comparator;
 
 import java.util.ArrayList;
 import java.util.List;

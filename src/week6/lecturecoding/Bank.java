@@ -1,6 +1,5 @@
-package week9.lecturecoding;
+package week6.lecturecoding;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Bank {

@@ -1,4 +1,4 @@
-package week9;
+package week6;
 
 import org.junit.Test;
 import week5.LinkedListNode;

@@ -1,4 +1,4 @@
-package week6;
+package week7;
 
 public class IntIncreasing extends Comparator<Integer> {
 

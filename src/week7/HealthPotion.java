@@ -1,4 +1,4 @@
-package week6;
+package week7;
 
 public class HealthPotion extends GameItem {
     private int increase;

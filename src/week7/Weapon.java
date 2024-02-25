@@ -1,6 +1,4 @@
-package week6;
-
-import java.util.Objects;
+package week7;
 
 public class Weapon extends GameItem {
     private int damage;

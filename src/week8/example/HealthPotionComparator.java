@@ -1,7 +1,7 @@
 package week8.example;
 
-import week6.Comparator;
-import week6.HealthPotion;
+import week7.Comparator;
+import week7.HealthPotion;
 
 public class HealthPotionComparator extends Comparator<HealthPotion> {
 

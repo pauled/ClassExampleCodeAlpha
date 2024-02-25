@@ -1,8 +1,8 @@
 package week8;
 
-import week6.Comparator;
-import week6.IntDecreasing;
-import week6.IntIncreasing;
+import week7.Comparator;
+import week7.IntDecreasing;
+import week7.IntIncreasing;
 
 public class BST<A> {
 

@@ -1,7 +1,7 @@
 package weekY.jessesway3pm;
 
 import org.junit.Test;
-import week6.InsertionSort;
+import week7.InsertionSort;
 
 import java.util.*;
 

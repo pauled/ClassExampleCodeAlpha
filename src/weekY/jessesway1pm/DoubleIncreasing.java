@@ -1,6 +1,6 @@
 package weekY.jessesway1pm;
 
-import week6.Comparator;
+import week7.Comparator;
 
 public class DoubleIncreasing extends Comparator<Double> {
 

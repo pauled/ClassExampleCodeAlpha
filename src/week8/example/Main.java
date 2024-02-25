@@ -1,6 +1,6 @@
 package week8.example;
 
-import week6.HealthPotion;
+import week7.HealthPotion;
 import week8.BST;
 
 public class Main {

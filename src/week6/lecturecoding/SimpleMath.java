@@ -1,4 +1,4 @@
-package week9.lecturecoding;
+package week6.lecturecoding;
 
 public class SimpleMath {
 

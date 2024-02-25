@@ -1,4 +1,4 @@
-package week9.lecturecoding.debugging;
+package week6.lecturecoding.debugging;
 
 import org.junit.Test;
 
