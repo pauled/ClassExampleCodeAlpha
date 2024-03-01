@@ -48,6 +48,7 @@ public class ItemTests {
         double expected = 80.0;
         Item item = new Item("salmon", basePrice);
         item.addSale(salePercent);
+
         double actual = item.getPrice();
         assertEquals(expected, actual, TOLERANCE);
         actual = item.getPrice();
@@ -123,6 +124,19 @@ public class ItemTests {
 
     @Test
     public void testItemTaxWithSales() {
+        double basePrice = 20.0;
+        double salePercent = 50.0;
+        double taxRate = 0.1;
+        double expected = 1.0;
+        Item item = new Item("Charger", basePrice);
+        item.addSale(salePercent);
+
+        double actual = item.computeTax(taxRate);
+        assertEquals(expected, actual, TOLERANCE);
+    }
+
+    @Test
+    public void testItemTaxWithMultipleSales() {
         double basePrice = 19.95;
         ArrayList<Double> sales = new ArrayList<>(Arrays.asList(11.1, 5.5, 6.0, 15.0));
         double taxRate = 0.0775;
