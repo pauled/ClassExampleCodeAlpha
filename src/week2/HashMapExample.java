@@ -14,7 +14,7 @@ public class HashMapExample {
         for (String key : bills.keySet()) {
             System.out.println(key);
         }
-        for (Integer value : bills.values()) {
+        for (int value : bills.values()) {
             System.out.println(value);
         }
         for (String key : bills.keySet()) {

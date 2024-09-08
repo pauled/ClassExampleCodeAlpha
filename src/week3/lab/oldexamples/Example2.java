@@ -1,4 +1,4 @@
-package week3.lab;
+package week3.lab.oldexamples;
 
 public class Example2 {
 
