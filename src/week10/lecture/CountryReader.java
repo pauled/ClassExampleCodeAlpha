@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class CountryReader {
 
@@ -26,6 +27,9 @@ public class CountryReader {
         ArrayList<City> cities = new ArrayList<>();
 
         for(String line : readFile(filename)){
+            if(line.equals("Country,City,Region,Population,Latitude,Longitude")){
+                continue;
+            }
             // ad,la massana,04,7211,42.55,1.5166667
             ArrayList<String> splits = new ArrayList<>(Arrays.asList(line.split(",")));
             String countryCode = splits.get(0);
@@ -43,5 +47,20 @@ public class CountryReader {
         return cities;
     }
 
+
+    public static HashMap<String, Integer> countryPopulations(String filename){
+        HashMap<String, Integer> countryPopulations = new HashMap<>();
+
+        ArrayList<City> cities = readCities(filename);
+
+        for(City city : cities){
+            if(!countryPopulations.containsKey(city.getCountryCode())){
+                countryPopulations.put(city.getCountryCode(), 0);
+            }
+            countryPopulations.put(city.getCountryCode(), countryPopulations.get(city.getCountryCode()) + city.getPopulation());
+        }
+        ArrayList<Integer> justValues = new ArrayList(countryPopulations.values());
+        return countryPopulations;
+    }
 
 }
